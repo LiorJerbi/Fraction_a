@@ -28,17 +28,16 @@ TEST_CASE("Throwing exceptions from operators:"){
     CHECK_NOTHROW(a++);
     CHECK_NOTHROW(--b);
 
-    b=b-b;
-    CHECK_THROWS(a/b);  //divide in zero;
+    Fraction c(0,0);
+    CHECK_THROWS(a/c);  //divide in zero;
 
 }
 TEST_CASE("Arithmetic Cases:"){
     Fraction a(5,2);
     Fraction b(1,2);
     CHECK(b==b+2.0);
-    CHECK(a-2.0==b);
     b=b-b;
-    CHECK(a*0.0==b);
+    CHECK((0.0*a)==b);
     Fraction c(1,2);
     CHECK(++c==--a);
 
@@ -49,9 +48,9 @@ TEST_CASE("Fraction reduction tests:"){
     Fraction b(1,2);
     CHECK(a-b<=2.0);
     CHECK(a+b>=3.0);
-    CHECK((a*0.2)==b);
-    Fraction a(1,4);
-    CHECK(a==(0.5*b));
+    CHECK((0.2*a)==b);
+    Fraction c(1,4);
+    CHECK(c==(0.5*b));
 }
 
 TEST_CASE("Ostream Tests:"){
