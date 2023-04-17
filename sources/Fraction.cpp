@@ -9,6 +9,7 @@ using namespace ariel;
     Fraction Fraction::operator/(const Fraction &other) const{return *this;}
     Fraction Fraction::operator+(const float &other) const{return *this;}
     Fraction Fraction::operator-(const float &other) const{return *this;}
+    Fraction Fraction::operator-(const int &other) const{return *this;}
     Fraction Fraction::operator*(const float &other) const{return *this;}
     Fraction Fraction::operator/(const float &other) const{return *this;}
     bool Fraction::operator==(const Fraction &other) const{return false;}
@@ -31,12 +32,12 @@ using namespace ariel;
     //postfix dec
     Fraction Fraction::operator--(int dummy_flag){Fraction copy=*this; return copy;}
 
-    std::ostream& operator<< (std::ostream& output, const Fraction& f){return output;}
-    std::istream& operator>> (std::istream& input , Fraction& f){return input;}
-    std::ostream& operator<< (const Fraction& f,std::ostream& input){return input;}
-    std::istream& operator>> (Fraction& f,std::istream& output){return output;}
+    std::ostream& operator<<(std::ostream& output, const Fraction& f){return output;}
+    std::istream& operator>>(std::istream& input , Fraction& f){return input;}
+    std::ostream& operator<<(const Fraction& f,std::ostream& input){return input;}
+    std::istream& operator>>(Fraction& f,std::istream& output){return output;}
 
-    Fraction operator- (const Fraction& f1, const float& f2){return f1;}
-    Fraction operator* (const Fraction& f1, const float& f2){return f1;}
-    Fraction operator- (const float& f1, const Fraction& f2){return f2;}
-    Fraction operator* (const float& f1, const Fraction& f2){return f2;}
+    Fraction operator-(const Fraction& f1, const float& f2){return f1;}
+    Fraction operator*(const Fraction& f1, const float& f2){return f1;}
+    Fraction operator-(const float& f1, const Fraction& f2){return f2;}
+    Fraction operator*(const float& f1, const Fraction& f2){return f2;}
