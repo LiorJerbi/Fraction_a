@@ -35,7 +35,7 @@ TEST_CASE("Throwing exceptions from operators:"){
 TEST_CASE("Arithmetic Cases:"){
     Fraction a(5,2);
     Fraction b(1,2);
-    CHECK(b==b+2.0);
+    CHECK(a==b+2.0);
     b=b-b;
     CHECK((0.0*a)==b);
     Fraction c(1,2);
